@@ -13,24 +13,24 @@ pipeline{
       steps {
         script {
           try {
-            bat 'docker stop mlops'
+            sh 'docker stop mlops'
           } catch(err) {
-            bat 'echo Container mlops Already Stopped'
+            sh 'echo Container mlops Already Stopped'
           }
           try {
-              bat 'docker rm mlops'
+              sh 'docker rm mlops'
           } catch(err1) {
-            bat 'echo done'
+            sh 'echo done'
           }
           try {
-            bat 'docker image rm mlops'
+            sh 'docker image rm mlops'
           } catch (err) {
-            bat 'echo Image mlops Already Removed'
+            sh 'echo Image mlops Already Removed'
           }
-          bat 'echo bingo!'
-          bat 'docker build -t python:0.0.1 .'
+          sh 'echo bingo!'
+          sh 'docker build -t python:0.0.1 .'
           echo 'Running docker image'
-          bat 'docker run python:0.0.1'
+          sh 'docker run python:0.0.1'
 
         }
   }
