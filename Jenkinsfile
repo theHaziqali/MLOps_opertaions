@@ -30,6 +30,7 @@ pipeline{
           bat 'echo bingo!'
           bat 'docker build -t app.py .'
           echo 'Running docker image'
+          bat 'docker run app.py
 
         }
   }
