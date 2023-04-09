@@ -28,9 +28,9 @@ pipeline{
             bat 'echo Image mlops Already Removed'
           }
           bat 'echo bingo!'
-          bat 'docker build -t app.py .'
+          bat 'docker build -t python:0.0.1 .'
           echo 'Running docker image'
-          bat 'docker run app.py
+          bat 'docker run python:0.0.1
 
         }
   }
