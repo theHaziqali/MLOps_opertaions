@@ -10,7 +10,7 @@ pipeline{
       }
     }
     
-     stage('Run') {
+     stage('Build') {
       steps {
         script {
           try {
@@ -30,11 +30,16 @@ pipeline{
           }
           sh 'echo bingo!'
           sh 'docker build -t python:0.0.1 .'
-          echo 'Running docker image'
-          sh 'docker run python:0.0.1'
+          echo 'tagging docker image'
           sh 'sudo docker tag python:0.0.1 haziq/python:0.0.1'
           sh 'sudo docker push haziq/python:0.0.1'
 
+        }
+        stage('Execute') {
+        steps {
+            sh 'sudo kubectl version'
+            sh 'sudo kubectl apply -f deployment.yaml'
+            sh 'sudo kubectl apply -f service.yaml'
         }
   }
      }
