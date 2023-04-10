@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: MLOps_operations
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: MLOps_operations
+  template:
+    metadata:
+      labels:
+        app: MLOps_operations
+    spec:
+      containers:
+      - name: k8s-classtask
+        image: 
+        ports:
+        - containerPort: 8080
