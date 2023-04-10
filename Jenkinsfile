@@ -16,8 +16,8 @@ pipeline{
           sh 'echo bingo!'
           sh 'docker build -t python:0.0.1 .'
           echo 'tagging docker image'
-          sh 'sudo docker tag python:0.0.1 haziq/python:0.0.1'
-          sh 'sudo docker push haziq/python:0.0.1'
+          sh 'docker tag python:0.0.1 haziq/python:0.0.1'
+          sh 'docker push haziq/python:0.0.1'
 
         }
       
