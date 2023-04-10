@@ -13,7 +13,7 @@ spec:
         app: MLOps_operations
     spec:
       containers:
-      - name: k8s-classtask
-        image: 
+      - name: MLOps_operations
+        image: haziq/python:0.0.1
         ports:
         - containerPort: 8080
