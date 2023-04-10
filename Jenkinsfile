@@ -9,6 +9,7 @@ pipeline{
       checkout scm
       }
     }
+    
      stage('Run') {
       steps {
         script {
@@ -31,6 +32,8 @@ pipeline{
           sh 'docker build -t python:0.0.1 .'
           echo 'Running docker image'
           sh 'docker run python:0.0.1'
+          sh 'sudo docker tag python:0.0.1 haziq/python:0.0.1'
+          sh 'sudo docker push haziq/python:0.0.1'
 
         }
   }
