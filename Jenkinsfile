@@ -35,14 +35,16 @@ pipeline{
           sh 'sudo docker push haziq/python:0.0.1'
 
         }
-        stage('Execute') {
+      
+  }
+
+     }
+             stage('Execute') {
         steps {
             sh 'sudo kubectl version'
             sh 'sudo kubectl apply -f deployment.yaml'
             sh 'sudo kubectl apply -f service.yaml'
         }
-  }
-     }
   }
 }
 }
