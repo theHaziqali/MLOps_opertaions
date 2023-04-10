@@ -13,21 +13,6 @@ pipeline{
      stage('Build') {
       steps {
         script {
-          try {
-            sh 'docker stop python:0.0.1'
-          } catch(err) {
-            sh 'echo Container mlops Already Stopped'
-          }
-          try {
-              sh 'docker rm python:0.0.1'
-          } catch(err1) {
-            sh 'echo done'
-          }
-          try {
-            sh 'docker image rm python:0.0.1'
-          } catch (err) {
-            sh 'echo Image mlops Already Removed'
-          }
           sh 'echo bingo!'
           sh 'docker build -t python:0.0.1 .'
           echo 'tagging docker image'
