@@ -20,7 +20,7 @@ pipeline{
          ' username: Haziqali'
          ' password : 12602700h'
           echo 'tagging docker image'
-          sh 'docker tag python:0.0.1 haziq/python:0.0.1
+          sh 'docker tag python:0.0.1 haziq/python:0.0.1'
           sh 'docker push haziq/python:0.0.1'
 
         }
